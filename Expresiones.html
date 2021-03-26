@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="expresiones">
+    <head>
+        <meta charset="utf-8" />
+        <title>Expresiones</title>
+        <script type="text/javascript" src="angular.min.js"></script>
+    </head>
+    <body>
+     <div ng-controller="miControlador">
+       
+        {{mensaje}} 
+ 
+     </div>
+       
+
+    <script type="text/javascript">
+    
+    var expresiones=angular.module('expresiones',[] );
+
+    expresiones.controller('miControlador', function($scope)
+    {
+
+        $scope.mensaje ="Esto es una expresion";
+    });
+
+
+    </script>
+        
+    </body>
+</html>
