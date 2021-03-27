@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app ="filtros">
+    <head>
+        <meta charset="utf-8" />
+        <title>Filtros Expressiones</title>
+        <script type="text/javascript" src="angular.min.js"></script>
+    </head>
+    <body>
+
+        <h1>Pantalón azul </h1>
+        <hr>
+        <h3>Costo: {{15 | currency:"USD $"}}</h3>
+        <h3>Costo: {{12 | currency:"€ "}}</h3>
+        
+        <p>{{"PROCEDENCIA" | lowercase}}</p>
+        
+        <ul>
+          <li>{{"ChiNA" | uppercase}}</li>
+          <li>{{"EstaDOS unidos" | uppercase}}</li>
+          <li>{{"ColoMbia" | uppercase}}</li>
+          <li>{{"México" | uppercase}}</li>
+          <li>{{"esPaña" | uppercase}}</li>
+        </ul>
+        <p>nivel de venta del vendedor: {{92.5264612154 | number:2}} %</p>
+        <p>stock: {{8 | number}}</p>
+        
+        <script type="text/javascript">
+          
+          var filtros = angular.module('filtros', []);
+        </script>
+
+ 
+        
+    </body>
+</html>
