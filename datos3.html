@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="datosApp">
+<head>
+<meta charset="utf-8">
+  <title>Importar datos</title>
+  <script type="text/javascript" src="angular.min.js"></script>
+</head>
+<body>
+
+<div ng-controller="controladorDatos">
+  <h1>A-Team</h1>
+  <p>{{equipo.historia}}</p>
+  <ul>
+    <li ng-repeat="intengrante in equipo.integrantes">
+      {{intengrante.rango}} {{intengrante.nombre}} {{intengrante.especialidad}}
+    </li>
+  </ul>
+</div>
+
+<script type="text/javascript">
+  
+var misDatos = angular.module('datosApp', []);
+
+misDatos.controller('controladorDatos',function($scope,$http){
+
+    $scope.importar = function(){
+
+      $http.get('datos.json').success(function(datos){
+
+        $scope.equipo = datos;
+
+      });
+    }
+
+    $scope.importar();
+
+});
+
+</script>
+
+</body>
+</html>
