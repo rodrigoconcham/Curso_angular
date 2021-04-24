@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <title>Routing</title>
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript" src="angular-route.min.js"></script>
+</head>
+<body ng-app="routingApp">
+
+<div ng-include="'plantillas/menu.html'"></div>
+
+<div ng-view></div>
+
+<script type="text/javascript">
+
+var miRouting = angular.module('routingApp', ['ngRoute']);
+
+miRouting.config(['$routeProvider',function($routeProvider) {
+  
+  $routeProvider.when('/seccion1',{
+    templateUrl:'plantillas/seccion1.html'
+  }).when('/seccion2',{
+    templateUrl:'plantillas/seccion2.html'
+  }).otherwise({
+    redirectTo:'/'
+  });
+
+}]);
+
+</script>
+</body>
+</html>
